@@ -35,7 +35,7 @@ public class EmpleadoFreelance extends Empleado implements Beneficiable{
 
     @Override
     public double calcularBonificacion() {
-        if(horasTrabajas>160){
+        if(horasTrabajadas>160){
             return (horasTrabajadas * tarifaHora)*0.05;
         } else{
             return 0;

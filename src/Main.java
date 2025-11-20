@@ -1,15 +1,41 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        System.out.println("=== DETALLES EMPLEADO TIEMPO COMPLETO ===");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        EmpleadoTiempoCompleto empFijo = new EmpleadoTiempoCompleto(
+                "Juan Pérez",
+                "TC-001",
+                10000.0,
+                5,
+                "Tecnología"
+        );
+
+        empFijo.mostrarInfo();
+
+        System.out.println("Departamento: " + empFijo.getDepartamento());
+        System.out.println("Antigüedad: " + empFijo.getAntiguedad() + " años");
+        System.out.println("Bonificación: $" + empFijo.calcularBonificacion());
+        System.out.println("Salario Final: $" + empFijo.calcularSalario());
+        System.out.println("Descuento Seguro: $" + empFijo.aplicarDescuentoSeguro());
+        System.out.println("\n-------------------------------------------------------\n");
+
+        System.out.println("=== DETALLES EMPLEADO FREELANCE ===");
+
+        EmpleadoFreelance empFree = new EmpleadoFreelance(
+                "Ana López",
+                "FL-099",
+                0.0,
+                170,
+                500.0
+        );
+
+        empFree.mostrarInfo();
+
+        System.out.println("Horas Trabajadas: " + empFree.getHorasTrabajadas());
+        System.out.println("Tarifa por Hora: $" + empFree.getTarifaHora());
+
+        System.out.println("Bonificación: $" + empFree.calcularBonificacion());
+        System.out.println("Salario Final: $" + empFree.calcularSalario());
+        System.out.println("Descuento Seguro: $" + empFree.aplicarDescuentoSeguro());
     }
 }
